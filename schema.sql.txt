@@ -32,8 +32,8 @@ CREATE TABLE salaries (
   PRIMARY KEY (emp_no)
 );
 create table dept_emp (
-	dept_no varchar(4),
 	emp_no int,
+	dept_no varchar(4),
 	from_date DATE NOT NULL,
 	to_date DATE NOT NULL,
 	FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
@@ -41,10 +41,9 @@ create table dept_emp (
 	primary key (dept_no, emp_no)
 );
 create table titles (
-	emp_no int,
-	title varchar(40),
+	emp_no int NOT NULL,
+	title varchar(40) NOT NULL,
 	from_date DATE NOT NULL,
 	to_date DATE NOT NULL,
-	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-	primary key (emp_no, title)
+	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
